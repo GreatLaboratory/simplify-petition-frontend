@@ -5,11 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import ReduxThunk from 'redux-thunk';
+import logger from 'redux-logger';
+import { Provider } from 'react-redux';
+import rootReducer from './modules';
 
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(ReduxThunk, logger)));
 ReactDOM.render(
     <BrowserRouter> 
         <HelmetProvider>
-            <App />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </HelmetProvider>
     </BrowserRouter>,
     document.getElementById('root')
