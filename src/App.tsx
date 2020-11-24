@@ -13,7 +13,7 @@ function App () {
             <Helmet><title>GreatLaboratory</title></Helmet>
             <Route component={HomePage} path='/' exact/>
             <Route component={WordCloudPage} path={['/wordCloud/:category', '/wordCloud']}/>
-            <Route component={SummaryPage} path={['/summarization/:category', '/summarization']}/>
+            <Route component={SummaryPage} path={['/summarization/:category/:petitionID', '/summarization/:category', '/summarization']}/>
         </>
     );
 }
