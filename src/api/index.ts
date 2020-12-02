@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 
-const flaskBaseUrl: string = 'http://localhost:5000';
-const echoBaseUrl: string = 'http://localhost:1323';
+const flaskBaseUrl: string = 'http://13.125.54.184:5000';
+const echoBaseUrl: string = 'http://13.125.54.184:1323'; 
 export const getWordCloudImage = async (category: string) => {
     try {
         const imgUrl: string = `${flaskBaseUrl}/api/wordCloud/${category}`;
